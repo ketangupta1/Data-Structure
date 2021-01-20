@@ -1,3 +1,4 @@
+
 /*
 
     Following is the Node class already written for the Linked List
@@ -13,7 +14,7 @@
 
 */
 import java.util.*;
-public class SwapNodeOfLL {
+public class Solution {
 
 	public static LinkedListNode<Integer> swapNodes(LinkedListNode<Integer> head, int i, int j) {
 		//Your code goes here
@@ -23,7 +24,15 @@ public class SwapNodeOfLL {
         int size=0,m,n;
         temp=head;
          m=i;n=j;
-        if(i==0 || j==0)
+        
+        if(Math.abs(m-n)==1 && (i==0 || j==0))
+        {
+            temp2=temp.next.next;
+            head=head.next;
+            temp.next=temp2;
+            head.next=temp;
+        }
+        else if((i==0 || j==0) && Math.abs(m-n)!=1)
         {
             cur1=temp;temp1=cur1.next;
             while(m-->1 || n-->1)
@@ -50,13 +59,7 @@ public class SwapNodeOfLL {
             cur2.next=cur1;
             cur1.next=temp2;
         }
-        else if(i==0||j==0 && Math.abs(m-n)==1)
-        {
-            temp2=temp.next.next;
-            head=head.next;
-            temp.next=temp2;
-            head.next=temp;
-        }
+        
         else
         {
            
@@ -89,3 +92,6 @@ public class SwapNodeOfLL {
 	}
 
 }
+
+
+// }
