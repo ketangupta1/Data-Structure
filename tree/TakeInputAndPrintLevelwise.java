@@ -38,7 +38,7 @@ public class TakeInputLevelwise {
 		Queue<TreeNode<Integer>> queue=new LinkedList<>();
 		System.out.println(root.data);
 		queue.add(root);
-		TreeNode<Integer> nullNode=new TreeNode<Integer>(Integer.MIN_VALUE);
+		TreeNode<Integer> nullNode=new TreeNode<Integer>(Integer.MIN_VALUE);   //Adding this to know the level of tree.After the completion of each level a nullNode is added to the queue to know the where my level is completed.
 		queue.add(nullNode);
 		while(queue.size()!=1)
 		{
