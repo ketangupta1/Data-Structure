@@ -1,6 +1,6 @@
 package tree;
 import java.util.*;
-public class TakeInputAndPrintLevelwise {
+public class TakeInputLevelwise {
 
 	public static void main(String args[])
 	{
@@ -36,21 +36,21 @@ public class TakeInputAndPrintLevelwise {
 	static void print(TreeNode<Integer> root)
 	{
 		Queue<TreeNode<Integer>> queue=new LinkedList<>();
-		//System.out.println(root.data);
+		System.out.println(root.data);
 		queue.add(root);
-
-		System.out.print(root.data+",");
-		while(!queue.isEmpty())
+		TreeNode<Integer> nullNode=new TreeNode<Integer>(Integer.MIN_VALUE);
+		queue.add(nullNode);
+		while(queue.size()!=1)
 		{
 			TreeNode<Integer> temp=queue.poll();
+			if(temp==nullNode)
+				System.out.println();
 			for(int i=0;i<temp.children.size();i++)
 			{
 				queue.add(temp.children.get(i));
-			}
-			for(int i=0;i<temp.children.size();i++)
-			{
 				System.out.print(temp.children.get(i).data+",");
 			}
 		}
 	}
+
 }
