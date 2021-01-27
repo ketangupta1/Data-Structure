@@ -16,7 +16,7 @@
 
 */
 
-public class Solution {
+public class TreeFormUsingPostAndIn {
 
 	public static BinaryTreeNode<Integer> buildTree(int[] postOrder, int[] inOrder) {
 		//Your code goes here
