@@ -16,7 +16,7 @@ public class SearchNode {
         boolean ans=false;
         if(root.data==k)
             return true;
-        if(root.data>k)
+        else if(root.data>k)
            ans=searchInBST(root.left,k);
         else
            ans=searchInBST(root.right,k);
