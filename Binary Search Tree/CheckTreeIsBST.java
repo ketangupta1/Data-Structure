@@ -50,3 +50,4 @@ public class Solution {
 	}
 
 }
+// This code fails for the tree 4 2 7 1 5 6 8 -1 -1 -1 -1 -1 -1 -1 -1
