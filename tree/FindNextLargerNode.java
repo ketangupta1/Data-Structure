@@ -1,4 +1,5 @@
 //Given a generic tree and an integer n. Find and return the node with next larger element in the Tree i.e. find a node with value just greater than n.
+
 public class FindNextLargerNode {
 
 /*	TreeNode structure 
@@ -15,33 +16,24 @@ public class FindNextLargerNode {
 	
 	public static TreeNode<Integer> findNextLargerNode(TreeNode<Integer> root, int n){
 		
-		// Write your code here
-
-        pair temp=findNextLargestNode(root,n);
-        return temp.node;
-	}
-	
-    public static pair findNextLargestNode(TreeNode<Integer> root, int n)
-    {
-        pair temp=new pair();
-        temp.node=root;
-        if(root.data-n<=0)
-            temp.diff=Integer.MAX_VALUE;
+        if(root==null)
+            return root;
+        TreeNode<Integer> ans,temp;
+        
+        if(root.data<=n)
+            ans=null;
         else
-            temp.diff=root.data-n;
+            ans=root;
         for(int i=0;i<root.children.size();i++)
         {
-            pair child=findNextLargestNode(root.children.get(i),n);
-            if(child.diff<temp.diff)
-            {
-                temp=child;
-            }
+            temp=findNextLargerNode(root.children.get(i),n);
+            if(ans==null)
+                ans=temp;
+            else if(temp==null);
+            else if(temp.data<ans.data)
+                ans.data=temp.data;
         }
-        return temp;
-    }
-}
-
-class pair{
-    int diff;
-    TreeNode<Integer> node;
+        return ans;
+	}
+	
 }
