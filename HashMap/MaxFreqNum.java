@@ -20,21 +20,17 @@ public class Solution {
                 int n=map.get(arr[i]);
                 n+=1;
                 map.put(arr[i],n);
-                if(Max<n)
-                {
-                    Max=n;
-                    key=arr[i];
-                }
             }
             else
             {
                 map.put(arr[i],1);
-                if(Max<1)
-                {
-                    Max=1;
-                    key=arr[i];
-                }
             }
+        }
+	for(int i=0;i<arr.length;i++){
+            if(Max<map.get(arr[i])){
+                Max=map.get(arr[i]);
+                key=arr[i];
+	    }
         }
         return key;
     }
